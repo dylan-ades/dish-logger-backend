@@ -18,7 +18,7 @@ A web app that makes it easy to keep track of all your favorite (and least favor
 
 
 # Getting Started
-Click [here](https://646cc382ed35a51df0f22f26--heroic-scone-06d40a.netlify.app/about) to try out Dish Logger!
+Click [here](https://646cc382ed35a51df0f22f26--heroic-scone-06d40a.netlify.app/) to try out Dish Logger!
 
 # Future Enchancements
 - Profile functionality
