@@ -34,13 +34,15 @@ mongoose.connection
 ///////////////////////////////
 // MODELS
 ////////////////////////////////
-const PeopleSchema = new mongoose.Schema({
+const DishSchema = new mongoose.Schema({
   name: String,
   image: String,
+  rating: Number,
+  orderAgain: Boolean,
   title: String,
 });
 
-const People = mongoose.model("People", PeopleSchema);
+const Dishes = mongoose.model("Dishes", DishSchema);
 
 ///////////////////////////////
 // MiddleWare
@@ -58,45 +60,45 @@ app.get("/", (req, res) => {
   res.send("hello world");
 });
 
-// PEOPLE INDEX ROUTE
-app.get("/people", async (req, res) => {
+// DISHES INDEX ROUTE
+app.get("/dishes", async (req, res) => {
   try {
-    // send all people
-    res.json(await People.find({}));
+    // send all dishes
+    res.json(await Dishes.find({}));
   } catch (error) {
     //send error
     res.status(400).json(error);
   }
 });
 
-// PEOPLE CREATE ROUTE
-app.post("/people", async (req, res) => {
+// DISHES CREATE ROUTE
+app.post("/dishes", async (req, res) => {
   try {
-    // send all people
-    res.json(await People.create(req.body));
+    // send all dishes
+    res.json(await Dishes.create(req.body));
   } catch (error) {
     //send error
     res.status(400).json(error);
   }
 });
 
-// PEOPLE DELETE ROUTE
-app.delete("/people/:id", async (req, res) => {
+// DISHES DELETE ROUTE
+app.delete("/dishes/:id", async (req, res) => {
   try {
-    // send all people
-    res.json(await People.findByIdAndRemove(req.params.id));
+    // send all dishes
+    res.json(await Dishes.findByIdAndRemove(req.params.id));
   } catch (error) {
     //send error
     res.status(400).json(error);
   }
 });
 
-// PEOPLE UPDATE ROUTE
-app.put("/people/:id", async (req, res) => {
+// DISHES UPDATE ROUTE
+app.put("/dishes/:id", async (req, res) => {
   try {
-    // send all people
+    // send all dishes
     res.json(
-      await People.findByIdAndUpdate(req.params.id, req.body, { new: true })
+      await Dishes.findByIdAndUpdate(req.params.id, req.body, { new: true })
     );
   } catch (error) {
     //send error
