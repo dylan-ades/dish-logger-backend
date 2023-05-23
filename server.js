@@ -39,7 +39,7 @@ const DishSchema = new mongoose.Schema({
   image: String,
   rating: Number,
   orderAgain: Boolean,
-  title: String,
+  restaurant: String,
 });
 
 const Dishes = mongoose.model("Dishes", DishSchema);
